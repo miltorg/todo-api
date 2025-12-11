@@ -1,0 +1,26 @@
+# Установить поведение по умолчанию для всех файлов
+* text=auto
+
+# Явно указать текстовые файлы
+*.php text
+*.js text
+*.css text
+*.html text
+*.md text
+*.json text
+*.yml text
+*.yaml text
+*.xml text
+*.txt text
+
+# Бинарные файлы
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+
+# Исключения для Windows
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
