@@ -10,48 +10,49 @@
 ## Установка
 
 1. Клонировать репозиторий:
-\`\`\`bash
+
+```bash
 git clone https://github.com/miltorg/todo-api.git
 cd todo-api
-\`\`\`
+```
 
 2. Установить зависимости:
-\`\`\`bash
+```bash
 composer install
-\`\`\`
+```
 
 3. Настроить окружение:
-\`\`\`bash
+```bash
 cp .env.example .env
 php artisan key:generate
-\`\`\`
+```
 
 4. Настроить базу данных (SQLite):
-\`\`\`bash
+```bash
 touch database/database.sqlite
 # или в Windows:
 # type nul > database/database.sqlite
-\`\`\`
+```
 
 5. Выполнить миграции:
-\`\`\`bash
+```bash
 php artisan migrate
-\`\`\`
+```
 
 6. Запустить сервер:
-\`\`\`bash
+```bash
 php artisan serve
-\`\`\`
+```
 
 ## API Endpoints
 
 ### Получить все задачи
-\`\`\`
+```
 GET /api/tasks
-\`\`\`
+```
 
 ### Создать задачу
-\`\`\`
+```
 POST /api/tasks
 Content-Type: application/json
 
@@ -60,15 +61,15 @@ Content-Type: application/json
     \"description\": \"Описание задачи\",
     \"status\": \"pending\"
 }
-\`\`\`
+```
 
 ### Получить задачу по ID
-\`\`\`
+```
 GET /api/tasks/{id}
-\`\`\`
+```
 
 ### Обновить задачу
-\`\`\`
+```
 PUT /api/tasks/{id}
 Content-Type: application/json
 
@@ -77,16 +78,16 @@ Content-Type: application/json
     \"description\": \"Новое описание\",
     \"status\": \"completed\"
 }
-\`\`\`
+```
 
 ### Удалить задачу
-\`\`\`
+```
 DELETE /api/tasks/{id}
-\`\`\`
+```
 
 ## Примеры использования
 
-\`\`\`bash
+```bash
 # Создать задачу
 curl -X POST http://localhost:8000/api/tasks \\
   -H \"Content-Type: application/json\" \\
@@ -102,11 +103,11 @@ curl -X PUT http://localhost:8000/api/tasks/1 \\
 
 # Удалить задачу
 curl -X DELETE http://localhost:8000/api/tasks/1
-\`\`\`
+```
 
 ## Структура проекта
 
-\`\`\`
+```
 todo-api/
 ├── app/
 │   ├── Http/Controllers/TaskController.php
@@ -119,4 +120,4 @@ todo-api/
 ├── .gitignore
 ├── composer.json
 └── README.md
-\`\`\`
+```
