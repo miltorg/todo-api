@@ -24,6 +24,7 @@ composer install
 3. Настроить окружение:
 ```bash
 cp .env.example .env
+# Copy-Item .env.example .env -Force
 php artisan key:generate
 ```
 
@@ -31,7 +32,8 @@ php artisan key:generate
 ```bash
 touch database/database.sqlite
 # или в Windows:
-# type nul > database/database.sqlite
+# New-Item -Path "database" -ItemType Directory -Force | Out-Null
+# New-Item -Path "database\database.sqlite" -ItemType File -Force | Out-Null
 ```
 
 5. Выполнить миграции:
